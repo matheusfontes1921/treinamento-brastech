@@ -10,4 +10,7 @@ import {Component} from '@angular/core';
 
 export class CadastroFormComponent {
    title = "cadastro-form";
+   test() {
+    console.log("Funcionou");
+   }
 }

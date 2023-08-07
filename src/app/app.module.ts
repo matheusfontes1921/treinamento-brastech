@@ -6,7 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AppComponent } from './app.component';
-import { CadastroFormComponent } from './cadastro-form/cadastro-form.component';
+import { CadastroFormComponent } from './components/cadastro-form/cadastro-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {Component} from '@angular/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
