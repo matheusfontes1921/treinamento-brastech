@@ -15,7 +15,7 @@
                     <input id="cpf" matInput>
                 </mat-form-field>
             </div>
-            <div class="wrap-inputs-components"> 
+            <div class="wrap-inputs-components">
                 <mat-form-field>
                     <mat-label>Data de nascimento</mat-label>
                     <input matInput [matDatepicker]="picker">
@@ -37,7 +37,7 @@
             <div class="wrap-inputs-components">
                 <mat-form-field>
                     <mat-label>Rua</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="logradouro">
                 </mat-form-field>
             </div>
             <div class="wrap-inputs-components">
@@ -57,7 +57,7 @@
             <div class="wrap-inputs-components">
                 <mat-form-field>
                     <mat-label>UF</mat-label>
-                    <input id="cep" matInput>
+                    <input id="uf" matInput>
                 </mat-form-field>
             </div>
         </div>
