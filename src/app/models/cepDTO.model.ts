@@ -1,7 +1,7 @@
-export class Cep {
-    public cep?: string;
-    public logradouro?: string;
-    public bairro?: string;
-    public localidade?: string;
-    public uf?: string;
+export type Cep = {
+     cep?: string;
+     logradouro?: string;
+     bairro?: string;
+     localidade?: string;
+     uf?: string;
 }
