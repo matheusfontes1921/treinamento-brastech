@@ -8,6 +8,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { AppComponent } from './app.component';
 import { CadastroFormComponent } from './cadastro-form/cadastro-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {Component} from '@angular/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
     declarations: [
@@ -24,6 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         FormsModule,
         MatTableModule,
         BrowserAnimationsModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
     ]
 })
 export class AppModule { }

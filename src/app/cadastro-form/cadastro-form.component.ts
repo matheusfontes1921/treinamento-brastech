@@ -7,6 +7,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./cadastro-form.component.scss'],
   
 })
+
 export class CadastroFormComponent {
    title = "cadastro-form";
 }

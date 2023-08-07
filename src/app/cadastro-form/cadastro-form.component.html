@@ -7,14 +7,23 @@
             <mat-label>Nome</mat-label>
             <input id="nome" matInput>
         </mat-form-field>
-        <mat-form-field>
-            <mat-label>CPF</mat-label>
-            <input id="cpf" matInput>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Data de nascimento</mat-label>
-            <input id="dataNascimento" matInput>
-        </mat-form-field>
+        <div class="wrap-inputs">
+            <div class="wrap-inputs-components">
+                <mat-form-field>
+                    <mat-label>CPF</mat-label>
+                    <input id="cpf" matInput>
+                </mat-form-field>
+            </div>
+            <div class="wrap-inputs-components"> 
+                <mat-form-field>
+                    <mat-label>Data de nascimento</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+    </div>
         <mat-form-field>
             <mat-label>Email</mat-label>
             <input id="email" matInput>
@@ -23,22 +32,34 @@
             <mat-label>CEP</mat-label>
             <input id="cep" matInput>
         </mat-form-field>
-        <mat-form-field>
-            <mat-label>Rua</mat-label>
-            <input matInput>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Número</mat-label>
-            <input type="number" matInput>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Cidade</mat-label>
-            <input matInput>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>UF</mat-label>
-            <input id="cep" matInput>
-        </mat-form-field>
+        <div class="wrap-inputs">
+            <div class="wrap-inputs-components">
+                <mat-form-field>
+                    <mat-label>Rua</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div class="wrap-inputs-components">
+                <mat-form-field>
+                    <mat-label>Número</mat-label>
+                    <input type="number" matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="wrap-inputs">
+            <div class="wrap-inputs-components">
+                <mat-form-field>
+                    <mat-label>Cidade</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div class="wrap-inputs-components">
+                <mat-form-field>
+                    <mat-label>UF</mat-label>
+                    <input id="cep" matInput>
+                </mat-form-field>
+            </div>
+        </div>
         <button mat-flat-button color="primary">Salvar cadastro</button>
 
     </form>

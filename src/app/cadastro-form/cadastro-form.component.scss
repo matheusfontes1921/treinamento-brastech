@@ -25,3 +25,12 @@ mat-label {
   font-weight: bold;
   font-size: 16px;
 }
+.wrap-inputs{
+  display: flex;
+  width: 80%;
+  border-radius:10px;
+  justify-content: center;
+}
+.wrap-inputs-components{
+  width: 50%;
+}
