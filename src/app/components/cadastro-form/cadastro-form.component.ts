@@ -49,7 +49,7 @@ export class CadastroFormComponent implements OnInit {
   })
 }
   teste() {
-    alert("Teste")
+    alert(this.currentAddress?.bairro)
   }
 }
 
