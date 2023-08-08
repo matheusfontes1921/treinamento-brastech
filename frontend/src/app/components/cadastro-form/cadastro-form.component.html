@@ -1,0 +1,62 @@
+
+<div class="wrap">
+<div class="title">
+    <h1>Cadastro de usuários</h1>
+</div>
+    <form [formGroup]="addressForm">
+        <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input id="nome" matInput>
+        </mat-form-field>
+        <div class="wrap-inputs">
+                <mat-form-field>
+                    <mat-label>CPF</mat-label>
+                    <input id="cpf" matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Data de nascimento</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+    </div>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input id="email" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>CEP</mat-label>
+            <input (blur)="completarEndereco($event)" id="cep" matInput>
+        </mat-form-field>
+
+        <div class="wrap-inputs">
+                <mat-form-field>
+                    <mat-label>Rua</mat-label>
+                    <input matInput formControlName="logradouro">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Número</mat-label>
+                    <input type="number" matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Bairro</mat-label>
+                    <input matInput formControlName="bairro">
+                </mat-form-field>
+        </div> 
+        <div class="wrap-inputs">
+                <mat-form-field>
+                    <mat-label>Cidade</mat-label>
+                    <input matInput formControlName="cidade">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>UF</mat-label>
+                    <input id="uf" matInput formControlName="uf">
+                </mat-form-field>
+        </div>
+        <button (click)="teste()" mat-flat-button color="primary">Salvar cadastro</button>
+    </form>
+</div>
+<script>
+    var cepAtual = document.getElementById("cep");
+</script>
