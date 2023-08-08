@@ -1,11 +1,20 @@
 package com.example.treinamentobrastechback.model.entities;
 
 import java.util.Date;
+import com.example.treinamentobrastechback.model.dto.UserDTO;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name="tb_user")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+    private Long id;
     @Column(name="name")
     private String name;
     @Column(name="birthDate")
@@ -25,13 +34,14 @@ public class User {
     @Column(name="uf")
     private String uf;
 
-    public User(String name, String cpf, String street, double number, String neighborhood, String city, String uf) {
-        this.name = name;
-        this.cpf = cpf;
-        this.street = street;
-        this.number = number;
-        this.neighborhood = neighborhood;
-        this.city = city;
-        this.uf = uf;
+    public User(UserDTO userDTO) {
+        this.id = userDTO.getId();
+        this.name = userDTO.getName();
+        this.cpf = userDTO.getCpf();
+        this.street = userDTO.getStreet();
+        this.number = userDTO.getNumber();
+        this.neighborhood = userDTO.getNeighborhood();
+        this.city = userDTO.getCity();
+        this.uf = userDTO.getUf();
     }
 }
