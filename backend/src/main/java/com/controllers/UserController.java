@@ -25,7 +25,7 @@ public class UserController {
     public ResponseEntity<?> findUserById(@PathVariable Long id) {
         return userService.findById(id);
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/remover/{id}")
     public ResponseEntity<?> removeUser(@PathVariable Long id) {
         return userService.removeUser(id);
     }
