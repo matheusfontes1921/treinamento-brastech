@@ -1,7 +1,5 @@
 package com.example.treinamentobrastechback.model.dto;
-
 import java.util.Date;
-
 import lombok.*;
 @Getter
 @Setter
