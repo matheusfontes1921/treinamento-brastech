@@ -6,11 +6,10 @@ import lombok.*;
 @Getter
 @Setter
 public class UserDTO {
-    private Long id;
     private String name;
     private Date birthDate;
     private String email;
-    private String cpf;
+    private Long cpf;
     private String street;
     private double number;
     private String neighborhood;

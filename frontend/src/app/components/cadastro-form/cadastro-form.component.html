@@ -4,10 +4,16 @@
     <h1>Cadastro de usuários</h1>
 </div>
     <form [formGroup]="addressForm">
+        <div class="wrap-inputs">
         <mat-form-field>
             <mat-label>Nome</mat-label>
             <input id="nome" matInput>
         </mat-form-field>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input id="email" matInput>
+        </mat-form-field>
+    </div>
         <div class="wrap-inputs">
                 <mat-form-field>
                     <mat-label>CPF</mat-label>
@@ -16,25 +22,22 @@
                 <mat-form-field>
                     <mat-label>Data de nascimento</mat-label>
                     <input matInput [matDatepicker]="picker">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
     </div>
-        <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input id="email" matInput>
-        </mat-form-field>
+        <div class="wrap-inputs">
         <mat-form-field>
             <mat-label>CEP</mat-label>
             <input (blur)="completarEndereco($event)" id="cep" matInput>
         </mat-form-field>
 
+        <mat-form-field>
+            <mat-label>Rua</mat-label>
+            <input matInput formControlName="logradouro">
+        </mat-form-field>
+    </div>
         <div class="wrap-inputs">
-                <mat-form-field>
-                    <mat-label>Rua</mat-label>
-                    <input matInput formControlName="logradouro">
-                </mat-form-field>
                 <mat-form-field>
                     <mat-label>Número</mat-label>
                     <input type="number" matInput>

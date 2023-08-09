@@ -3,22 +3,24 @@ package com.example.treinamentobrastechback.model.entities;
 import java.util.Date;
 import com.example.treinamentobrastechback.model.dto.UserDTO;
 import jakarta.persistence.*;
-
+import lombok.*;
+@Getter
+@Setter
 @Entity
 @Table(name="tb_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
-    private Long id;
+    @Column(name="cpf")
+    private Long cpf;
     @Column(name="name")
     private String name;
     @Column(name="birthDate")
     private Date birthDate;
     @Column(name="email")
     private String email;
-    @Column(name="cpf")
-    private String cpf;
+    @Column(name="zipCode")
+    private String zipCode;
     @Column(name="street")
     private String street;
     @Column(name="number")
@@ -31,7 +33,6 @@ public class User {
     private String uf;
 
     public User(UserDTO userDTO) {
-        this.id = userDTO.getId();
         this.name = userDTO.getName();
         this.cpf = userDTO.getCpf();
         this.street = userDTO.getStreet();

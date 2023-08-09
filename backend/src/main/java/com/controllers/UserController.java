@@ -9,7 +9,9 @@ import com.example.treinamentobrastechback.model.entities.User;
 @RestController
 @RequestMapping("/users")
 public class UserController {
+
     private final UserService userService;
+
     public UserController(UserService userService) {
         this.userService=userService;
     }
@@ -22,12 +24,12 @@ public class UserController {
         return userService.createUser(user);
     }
     @GetMapping("/{id}")
-    public ResponseEntity<?> findUserById(@PathVariable Long id) {
-        return userService.findById(id);
+    public ResponseEntity<?> findUserById(@PathVariable Long cpf) {
+        return userService.findById(cpf);
     }
     @DeleteMapping("/remover/{id}")
-    public ResponseEntity<?> removeUser(@PathVariable Long id) {
-        return userService.removeUser(id);
+    public ResponseEntity<?> removeUser(@PathVariable Long cpf) {
+        return userService.removeUser(cpf);
     }
-
+    
 }
