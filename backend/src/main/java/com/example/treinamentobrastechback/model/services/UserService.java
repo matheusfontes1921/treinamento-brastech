@@ -2,11 +2,15 @@ package com.example.treinamentobrastechback.model.services;
 
 import com.example.treinamentobrastechback.model.entities.*;
 import com.example.treinamentobrastechback.model.repositories.*;
+import com.example.treinamentobrastechback.model.services.enums.UserServiceEnum;
 import java.util.*;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+@Service
 public class UserService {
 
     private final UserRepository userRepository;
+
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
