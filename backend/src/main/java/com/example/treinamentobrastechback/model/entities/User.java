@@ -3,11 +3,7 @@ package com.example.treinamentobrastechback.model.entities;
 import java.util.Date;
 import com.example.treinamentobrastechback.model.dto.UserDTO;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Table(name="tb_user")
 public class User {
