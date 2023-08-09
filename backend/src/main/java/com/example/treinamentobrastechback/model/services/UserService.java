@@ -4,8 +4,8 @@ import com.example.treinamentobrastechback.model.entities.*;
 import com.example.treinamentobrastechback.model.repositories.*;
 import java.util.*;
 import org.springframework.http.ResponseEntity;
-
 public class UserService {
+    private static final String USER_NOT_FOUND = "USER NOT FOUND";
     private final UserRepository userRepository;
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -14,7 +14,7 @@ public class UserService {
     public ResponseEntity<?> listarUsers() {
         List<User> users = userRepository.findAll();
         if(users.isEmpty()) {
-            return ResponseEntity.badRequest().body("Não existem usuários cadastrados");
+            return ResponseEntity.badRequest().body("There aren't users created");
         } else {
             return ResponseEntity.badRequest().body(users);
         }
@@ -32,7 +32,7 @@ public class UserService {
         if (user.isPresent()) {
             return ResponseEntity.ok().body(user.get());
         } else {
-            return ResponseEntity.badRequest().body("USER NOT FOUND");
+            return ResponseEntity.badRequest().body(USER_NOT_FOUND);
         }
     }
     public ResponseEntity<?> removeUser(Long cpf) {
@@ -41,7 +41,7 @@ public class UserService {
             userRepository.deleteById(cpf);
             return ResponseEntity.ok().body("USER DELETED!");
         } else {
-            return ResponseEntity.badRequest().body("USER NOT FOUND");
+            return ResponseEntity.badRequest().body(USER_NOT_FOUND);
         }
     }
     public ResponseEntity<?> editUser(Long cpf, User newUser) {
@@ -58,6 +58,6 @@ public class UserService {
             userObj.setUf(newUser.getUf()); 
             return ResponseEntity.ok().body(userObj);             
         } 
-        return ResponseEntity.badRequest().body("USER NOT FOUND");
+        return ResponseEntity.badRequest().body(USER_NOT_FOUND);
     }
 }
