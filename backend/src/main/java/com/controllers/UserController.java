@@ -22,8 +22,12 @@ public class UserController {
         return userService.createUser(user);
     }
     @GetMapping("/{id}")
-    public ResponseEntity findUserById(@PathVariable Long id) {
+    public ResponseEntity<?> findUserById(@PathVariable Long id) {
         return userService.findById(id);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> removeUser(@PathVariable Long id) {
+        return userService.removeUser(id);
     }
 
 }

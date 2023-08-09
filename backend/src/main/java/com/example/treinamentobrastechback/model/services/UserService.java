@@ -1,10 +1,10 @@
 package com.example.treinamentobrastechback.model.services;
+
 import com.example.treinamentobrastechback.model.entities.*;
-import com.example.treinamentobrastechback.model.repositories.UserRepository;
-
+import com.example.treinamentobrastechback.model.repositories.*;
 import java.util.*;
-
 import org.springframework.http.ResponseEntity;
+
 public class UserService {
     private final UserRepository userRepository;
     public UserService(UserRepository userRepository) {
@@ -30,8 +30,16 @@ public class UserService {
     public ResponseEntity<?> findById(Long id) {
         Optional<User> user = userRepository.findById(id);
         if (user.isPresent()) {
-            User objUser = user.get();
-            return ResponseEntity.ok().body(objUser);
+            return ResponseEntity.ok().body(user.get());
+        } else {
+            return ResponseEntity.badRequest().body("USER NOT FOUND");
+        }
+    }
+    public ResponseEntity<?> removeUser(Long id) {
+        Optional<User> user = userRepository.findById(id);
+        if (user.isPresent()) {
+            userRepository.deleteById(id);
+            return ResponseEntity.ok().body("USER DELETED!");
         } else {
             return ResponseEntity.badRequest().body("USER NOT FOUND");
         }
