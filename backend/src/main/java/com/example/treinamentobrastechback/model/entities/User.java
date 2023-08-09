@@ -11,6 +11,8 @@ import lombok.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+    private Long id;
     @Column(name="cpf")
     private Long cpf;
     @Column(name="name")
@@ -33,6 +35,7 @@ public class User {
     private String uf;
 
     public User(UserDTO userDTO) {
+        this.id = userDTO.getId();
         this.name = userDTO.getName();
         this.cpf = userDTO.getCpf();
         this.street = userDTO.getStreet();

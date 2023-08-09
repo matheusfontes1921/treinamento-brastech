@@ -31,25 +31,25 @@ public class UserService {
             return ResponseEntity.ok().body(UserServiceEnum.SUCCESS_USER_CREATED);
         }
     }
-    public ResponseEntity<?> findById(Long cpf) {
-        Optional<User> user = userRepository.findById(cpf);
+    public ResponseEntity<?> findById(Long id) {
+        Optional<User> user = userRepository.findById(id);
         if (user.isPresent()) {
             return ResponseEntity.ok().body(user.get());
         } else {
             return ResponseEntity.badRequest().body(UserServiceEnum.USER_NOT_FOUND);
         }
     }
-    public ResponseEntity<?> removeUser(Long cpf) {
-        Optional<User> user = userRepository.findById(cpf);
+    public ResponseEntity<?> removeUser(Long id) {
+        Optional<User> user = userRepository.findById(id);
         if (user.isPresent()) {
-            userRepository.deleteById(cpf);
+            userRepository.deleteById(id);
             return ResponseEntity.ok().body(UserServiceEnum.SUCCESS_USER_DELETED);
         } else {
             return ResponseEntity.badRequest().body(UserServiceEnum.USER_NOT_FOUND);
         }
     }
-    public ResponseEntity<?> editUser(Long cpf, User newUser) {
-        Optional<User> user = userRepository.findById(cpf);
+    public ResponseEntity<?> editUser(Long id, User newUser) {
+        Optional<User> user = userRepository.findById(id);
         if(user.isPresent()) {
             var userObj = user.get();
             userObj.setName(newUser.getName());
